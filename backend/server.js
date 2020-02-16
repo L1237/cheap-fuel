@@ -6,21 +6,17 @@ app.get('/', (req, res) => {
     res.json('Nothing here to see');
 });
 
-const gasStops = [{
-    title: "Shell",
-    description: "Tankstelle",
-    latlng: {
-        latitude: Math.random() * 49,
-        longitude: Math.random() * 13,
-    },
-}];
-
 app.get('/api/v1/gas_stops', (req, res) => {
-    res.json(gasStops);
-});
-
-app.post('/api/v1/gas_stops', (req, res) => {
-    res.json('Added a new gasstop');
+    console.log(req.query);
+    res.json([
+        {
+            name: 'Shell Apple',
+            location: {
+                latitude: parseFloat(req.query.latitude),
+                longitude: parseFloat(req.query.longitude),
+            }
+        }
+    ]);
 });
 
 app.listen(3000, (err) => {
