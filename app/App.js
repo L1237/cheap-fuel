@@ -1,15 +1,25 @@
-import React from 'react';
-import MapView from 'react-native-maps';
-import { StyleSheet, View, Dimensions } from 'react-native';
-
-const handleOnRegionChangeComplete = async () => {
-  
-} 
+import React, { useState } from 'react';
+import MapView, { Marker } from 'react-native-maps';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
 
 export default function App() {
+  const [gasStops, setGasStops] = useState([]);
+  
+
+  const handleOnRegionChangeComplete = async (e) => {
+    console.log(e);
+    const resp = await fetch(`http://localhost:3000/api/v1/gas_stops?latitude=${e.latitude}&longitude=${e.longitude}&latitudeDelta=${e.latitudeDelta}&longitudeDelta=${e.longitudeDelta}`);
+    const newGasStops = await resp.json();
+    setGasStops(newGasStops);
+  }
+
   return (
     <View style={styles.container}>
-      <MapView style={styles.mapStyle} followsUserLocation showsUserLocation onRegionChangeComplete={handleOnRegionChangeComplete} />
+      <MapView style={styles.mapStyle} followsUserLocation showsUserLocation onRegionChangeComplete={handleOnRegionChangeComplete}>
+        {gasStops.map(gs => (
+          <Marker key={gs.name} coordinate={gs.location} title={gs.name} />
+        ))}
+      </MapView>
     </View>
   );
 }
