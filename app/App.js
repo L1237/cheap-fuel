@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
+import{IonIcons,MaterialCommunityIcons}from '@expo/vector-icons';
 
 export default function App() {
   const [gasStops, setGasStops] = useState([]);
@@ -20,6 +21,7 @@ export default function App() {
           <Marker key={gs.name} coordinate={gs.location} title={gs.name} />
         ))}
       </MapView>
+<MaterialCommunityIcons name='gas-station' size={50} color='red'/>
     </View>
   );
 }
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
            return {
                types: ['diesel', 'petrol', 'lpg'],
                unit: 'km',
-               currency: 'ghc',
+               currency: '',
                byPrice: price,
                byDistance: stations
            };
