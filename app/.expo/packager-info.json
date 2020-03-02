@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 1908,
-  "expoServerNgrokUrl": "https://qg-74n.anonymous.app.exp.direct",
-  "packagerNgrokUrl": "https://packager.qg-74n.anonymous.app.exp.direct",
-  "ngrokPid": 2016
+  "packagerPid": 6045,
+  "expoServerNgrokUrl": "https://t2-b6j.levi123.app.exp.direct",
+  "packagerNgrokUrl": "https://packager.t2-b6j.levi123.app.exp.direct",
+  "ngrokPid": 6057
 }
