@@ -1,0 +1,24 @@
+input BoundsInput {
+    latitude: Float!
+    longitude: Float!
+    latitudeDelta: Float!
+    longitudeDelta: Float!
+}
+
+type LatLng {
+    latitude: Float!
+    longitude: Float!
+}
+
+type Query {
+    region(bounds: BoundsInput!): Region!
+}
+
+type Region {
+    stations: [Station!]!
+}
+
+type Station {
+    name: String!
+    location: LatLng!
+}

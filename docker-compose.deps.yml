@@ -6,3 +6,5 @@ services:
             POSTGRES_PASSWORD: cheapfuel
             POSTGRES_DB: cheapfuel
             POSTGRES_USER: cheapfuel
+        ports:
+            - 5432:5432
