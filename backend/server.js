@@ -1,25 +1,17 @@
-const express = require('express')
+import path from "path";
+import fs from "fs";
+import { GraphQLServer } from "graphql-yoga";
 
-const app = express();
+import resolvers from "./resolvers";
 
-app.get('/', (req, res) => {
-    res.json('Nothing here to see');
-});
+var pg = require("knex")(require('./knexfile'));
 
-app.get('/api/v1/gas_stops', (req, res) => {
-    console.log(req.query);
-    res.json([
-        {
-            name: 'Shell Apple',
-            location: {
-                latitude: parseFloat(req.query.latitude),
-                longitude: parseFloat(req.query.longitude),
-            }
-        }
-    ]);
-});
+const typeDefs = fs.readFileSync(
+  path.join(__dirname, "./schema.graphql"),
+  "utf8"
+);
 
-app.listen(3000, (err) => {
-    if(err) return console.error(err);
-    console.log('Listening on port 3000');
-});
+const server = new GraphQLServer({ typeDefs, resolvers });
+server.start(e =>
+  console.log(`Server is running on http://localhost:${e.port}`)
+);
