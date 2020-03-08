@@ -19,6 +19,11 @@ type Region {
 }
 
 type Station {
+    id: ID!
     name: String!
     location: LatLng!
+}
+
+type Mutation {
+    createRandomStation: Boolean!
 }

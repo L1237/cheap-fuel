@@ -8,6 +8,7 @@ const MAP_QUERY = gql`
   query MapQuery($latitude: Float!, $longitude: Float!, $latitudeDelta: Float!, $longitudeDelta: Float!) {
     region(bounds: { latitude: $latitude, longitude: $longitude, latitudeDelta: $latitudeDelta, longitudeDelta: $longitudeDelta }) {
       stations {
+        id
         name
         location {
             latitude
