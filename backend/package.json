@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e js,graphql --exec babel-node server"
+    "start": "nodemon -e js,graphql --exec babel-node server",
+    "migrate": "knex migrate:latest"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.6",
     "express": "^4.17.1",
     "graphql-yoga": "^1.18.3",
     "knex": "^0.20.10",
