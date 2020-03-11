@@ -77,7 +77,7 @@ async function getData() {
   return {
     types: ['diesel', 'petrol', 'lpg'],
     unit: 'km',
-    currency: '',
+    currency: 'Ghc',
     byPrice: price,
     byDistance: stations
   };
