@@ -25,6 +25,7 @@ export default {
   Region: {
     stations: async (value, args, context) => {
       const stations = await db.from('stations').select('*');
+      
       return stations;
     },
   },
@@ -60,7 +61,7 @@ async function getData(){
   price.sort(sortByPrice);
 
   return{
-    types:['diesel','petrol','lpg','kerosene'],
+    types:['diesel','gasoline','lpg','kerosene'],
     unit: 'km',
     currency: 'ghc',
     byPrice: price,
