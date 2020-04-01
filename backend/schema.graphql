@@ -1,6 +1,7 @@
 input BoundsInput {
     latitude: Float!
     longitude: Float!
+   
     latitudeDelta: Float!
     longitudeDelta: Float!
 }
@@ -26,4 +27,10 @@ type Station {
 
 type Mutation {
     createRandomStation: Boolean!
+}
+type Fuel{
+gasoline:Gasoline!
+diesel:Diesel!
+lpg:Lpg!
+Kerosene:Kerosene!
 }
