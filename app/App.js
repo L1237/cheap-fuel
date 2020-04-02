@@ -50,8 +50,9 @@ function filterStations(station) {
 function normalizeStations(value, index, stations) {
   stations[index].prices = {
     diesel: value.diesel,
-    petrol: value.petrol,
+    gasoline: value.gasoline,
     lpg: value.lpg,
+    kerosene: value.kerosene,
   }
 }
 stations[index].distance = value.dist;
@@ -142,3 +143,7 @@ module.exports = options => {
 
 //          return { getData };
 //      };
+
+
+
+
