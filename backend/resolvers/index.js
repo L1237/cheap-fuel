@@ -84,7 +84,7 @@ async function getData() {
   price.sort(sortByPrice);
 
   return {
-    types: ['diesel', 'petrol', 'lpg'],
+    types: ['diesel', 'gasoline', 'lpg','kerosene'],
     unit: 'km',
     currency: 'Ghc',
     byPrice: price,
@@ -96,27 +96,4 @@ module.exports = options => {
 
   return { getData };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
