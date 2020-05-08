@@ -3,7 +3,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import React, { useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
-import { IonIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 import Map from './pages/map'
 
